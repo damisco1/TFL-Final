@@ -46,6 +46,16 @@ public class PageObjects {
     }
 
 
+
+
+    public void closeWebsite() {
+
+        cdriver.manage().deleteAllCookies();
+        System.out.println("Closing Driver");
+        cdriver.quit();
+
+    }
+
     public void enterFromPostcode(String strArg1) {
 
         cdriver.findElement(fromAddress).sendKeys(strArg1);

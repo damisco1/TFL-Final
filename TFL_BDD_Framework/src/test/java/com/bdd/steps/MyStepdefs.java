@@ -30,6 +30,7 @@ public class MyStepdefs {
 
         driver =getDriver();
         driver.get("https://tfl.gov.uk/");
+        //accepting cookies
         try{
             driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/button[2]/strong[1]")).click();
         }
@@ -49,6 +50,7 @@ public class MyStepdefs {
     @Then("^I see the journey results page$")
     public void i_see_the_journey_results_page() throws InterruptedException {
         Thread.sleep(5000);
+        //get page title
         String a =driver.getTitle();
         String b = "Journey results - Transport for London";
         System.out.println("Page Title is " + a);
@@ -89,9 +91,7 @@ public class MyStepdefs {
     @And("^I close the website$")
     public void i_close_the_website() {
 
-        driver.manage().deleteAllCookies();
-        System.out.println("Closing Driver");
-        driver.quit();
+     a.closeWebsite();
     }
 
     @Then("I see an error message within the to search stating {string}")
